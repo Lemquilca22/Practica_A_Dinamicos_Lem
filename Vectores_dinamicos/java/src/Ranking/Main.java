@@ -23,6 +23,19 @@ public class Main {
         System.out.println("   BIENVENIDO AL RANKING TRIVIA");
         System.out.println("========================================\n");
     }
+    public static void mostrarRankingFinal() {
+        System.out.println("\n========================================");
+        System.out.println("       RANKING FINAL DEL JUEGO");
+        System.out.println("========================================");
+        if (mapaRanking.isEmpty()) {
+            System.out.println("No hubo jugadores en esta sesión.");
+        } else {
+            for (Jugador j : mapaRanking.values()) {
+                System.out.println("• " + j.getNomJugador() + " --- Puntaje: " + j.getPuntuacion() + " pts");
+            }
+        }
+        System.out.println("========================================\n");
+    }
     private static HashMap<String, Jugador> mapaRanking = new HashMap<>();
 
     static void main(String[] args) {
@@ -40,7 +53,7 @@ public class Main {
 
             Jugador jugadorActual = new Jugador(nombreUsuario, 0);
             int puntajePartida = 0;
-            
+
             for (int i = 0; i < bancoTotal.size(); i++) {
                 Pregunta p = bancoTotal.get(i);
                 System.out.println("\n" + (i + 1) + ". " + p.getEnunciado());
@@ -52,7 +65,7 @@ public class Main {
 
                 System.out.print("Respuesta: ");
                 int seleccion = sc.nextInt();
-                sc.nextLine(); // Limpiar el buffer después de leer un número
+                sc.nextLine();
 
                 if (p.esCorrecta(seleccion)) {
                     System.out.println("¡Correcto!");
@@ -62,18 +75,16 @@ public class Main {
                 }
             }
 
-            // Paso C: Actualizar puntaje y guardar en el mapa
             jugadorActual.setPuntuacion(puntajePartida);
             mapaRanking.put(nombreUsuario, jugadorActual);
             System.out.println("\n>>> Partida finalizada para " + nombreUsuario + ". Puntos: " + puntajePartida);
 
-            // Paso D: Condición de salida (AL FINAL)
             System.out.println("\n¿Deseas que otro jugador participe?");
             System.out.println("1. Sí (Jugar de nuevo)");
             System.out.println("2. No (Ver ranking y salir)");
             System.out.print("Opción: ");
             int opcionSalida = sc.nextInt();
-            sc.nextLine(); // Limpiar buffer importante
+            sc.nextLine();
 
             if (opcionSalida == 2) {
                 jugar = false;
