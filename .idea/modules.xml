@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Practica_A_Dinamicos_Lem.iml" filepath="$PROJECT_DIR$/.idea/Practica_A_Dinamicos_Lem.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Vectores_dinamicos/Vectores_dinamicos.iml" filepath="$PROJECT_DIR$/Vectores_dinamicos/Vectores_dinamicos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Vectores_dinamicos/java/java.iml" filepath="$PROJECT_DIR$/Vectores_dinamicos/java/java.iml" />
+    </modules>
+  </component>
+</project>
