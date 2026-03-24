@@ -40,7 +40,6 @@ public class Main {
 
     static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-//        List<Pregunta> bancoTotal= new ArrayList<>();
         boolean jugar = true;
 
         while (jugar) {
@@ -48,7 +47,7 @@ public class Main {
             añadirPreguntas(bancoTotal);
             printBienvenida();
 
-            System.out.print("Nombre del nuevo jugador (o escribe 'salir' para cerrar): ");
+            System.out.print("Nombre del nuevo jugador: ");
             String nombreUsuario = sc.nextLine();
 
             Jugador jugadorActual = new Jugador(nombreUsuario, 0);
